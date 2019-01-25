@@ -3,10 +3,9 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-8">
-
+    <div class="col-12 mx-4 my-3">
         <h1>Here are some tables for you to scrape</h1>
-        {# http://jinja.pocoo.org/docs/2.10/templates/#import-context-behavior #}
+        
         {% for results in results_by_race %}
             {% include 'table.html' %}
         {% endfor %}
