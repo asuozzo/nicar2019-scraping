@@ -4,7 +4,6 @@ This project contains the activities and supporting code for a hands-on workshop
 
 ## To do
 
-* [ ] Mock an initial version of the data and create Python abstractions around it
 * [ ] Implement the single-table version
 * [ ] Define next steps/division of labor
 
