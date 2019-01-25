@@ -2,20 +2,6 @@
 
 This project contains the activities and supporting code for a hands-on workshop on web scraping with Python for the 2019 NICAR conference.
 
-## To do
-
-* [ ] Implement the single-table version
-* [ ] Define next steps/division of labor
-
-* [ ] Mock robots.txt
-* [ ] Mock malformed HTML
-* [ ] Tipsheet
-  - Other parsers
-  - Other challenging sites (and solutions)
-* [] Mock or implement additional cases for
-  - Data as JSON
-  - Multi-stage form where state is saved in cookie/session
-
 ## Assumptions
 
 - Python 3.6+
