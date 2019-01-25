@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}Candidate profiles{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mx-5 my-3">
+        <h1>{{candidate_name}}</h1>
+        <p>{{candidate_info.bio}}</p>
+    </div>
+</div>
+{% endblock %}
