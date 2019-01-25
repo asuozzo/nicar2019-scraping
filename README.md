@@ -21,7 +21,7 @@ pipenv install
 In order to make this workshop able to run, even if conference Internet access is sketchy, we decided to implement a mock site that has many features of actual sites we've scraped as a Flask app. To run this app, run the following command:
 
 ```
-FLASK_APP=scraping-site/hello.py pipenv run flask run
+FLASK_APP=scraping-site/views.py pipenv run flask run
 ```
 
 TODO: Can we streamline this at all, especially the environment variable setting?
