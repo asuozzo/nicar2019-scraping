@@ -4,4 +4,4 @@ bp = Blueprint('candidate_profiles', __name__)
 
 @bp.route('/3')
 def candidate_profiles():
-    return "candidate profiles"
+    return render_template('candidate-profiles.html')
