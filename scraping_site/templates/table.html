@@ -1,6 +1,6 @@
-<h2>{{ results[0].office }}</h2>
+<h2>{{ results[0].office|title }}</h2>
 
-<table>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Candidate</th>
@@ -11,8 +11,8 @@
     <tbody>
         {% for result in results %}
         <tr>
-            <td>{{result.candidate}}</td>
-            <td>{{result.party}}</td>
+            <td>{{result.candidate|title}}</td>
+            <td>{{result.party|title}}</td>
             <td>{{result.votes}}</td>
         </tr>
         {% endfor %}
