@@ -3,9 +3,10 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-12 mx-5 my-3">
-        <h1>{{candidate_info.candidate}}</h1>
-        <p>{{candidate_info.bio}}</p>
+    <div class="col-12 px-5 py-3">
+        <h1>{{candidate_info.candidate|title}} <span class="party">{{candidate_info.party}}</span></h1>
+        <p class="bio">{{candidate_info.bio}}</p>
+<p><span class="font-weight-bold">Campaign funds raised (2018)</span>: ${{candidate_info.campaignfinance}}</p>
     </div>
 </div>
 {% endblock %}
