@@ -1,0 +1,20 @@
+<h2>{{ results[0].office|title }}</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Candidate</th>
+            <th>Party</th>
+            <th>Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td><a href="{{ url_for('candidate_profiles.candidate_profile', candidate_name=result.candidate) }}">{{result.candidate|title}}</a></td>
+            <td>{{result.party|title}}</td>
+            <td>{{result.votes}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

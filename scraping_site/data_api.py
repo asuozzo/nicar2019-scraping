@@ -13,3 +13,9 @@ def get_race_results(year, office):
             result for result in csv.DictReader(f)
             if result['office'] == office
         ]
+
+def get_candidate_info(candidate_name):
+    filename = os.path.join(DATA_DIR, 'candidateprofiles.csv')
+    with open(filename) as f:
+        return next((result for result in csv.DictReader(f)
+            if result['candidate'] == candidate_name), None)
