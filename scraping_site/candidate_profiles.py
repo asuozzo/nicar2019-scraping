@@ -18,6 +18,5 @@ def candidate_profile(candidate_name):
     if candidate_info:
         return render_template('candidate-profile.html', 
                     candidate_info=candidate_info)
-    else:
-        return render_template('candidate-missing.html', candidate_name=candidate_name)
+    return render_template('error.html', candidate_name=candidate_name), 404
         

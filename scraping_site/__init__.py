@@ -15,4 +15,8 @@ def create_app(test_config=None):
     def intro():
         return render_template('intro.html')
 
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('error.html'), 404
+
     return app
