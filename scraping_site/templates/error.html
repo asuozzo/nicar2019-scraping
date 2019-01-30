@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Page not found (404){% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 px-5 py-3">
+        {% if candidate_name %}
+            <p>Whoops, we couldn't find {{candidate_name}}. Try looking for someone else!</p>
+        {% else %}
+            <p>Whoops, we couldn't find that page.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
