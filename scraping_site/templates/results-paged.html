@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Paged results{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 px-5 py-3">
+
+        <h1>Here is a simple table for you to scrape</h1>
+
+        <p><a href="{{ url_for('.form_with_url_params') }}">Select other results</a></p>
+
+        {% include 'table.html' %}
+
+        <nav aria-label="Results paging">
+          <ul class="pagination">
+            <li class="page-item {% if page == 1%}disabled{% endif %}">
+                <a class="page-link" href="{{ url_for_other_page(page - 1) }}" tabindex="-1">Previous</a>
+            </li>
+            {% if page > 1 %}
+            <li class="page-item"><a class="page-link" href="{{ url_for_other_page(page - 1) }}">{{ page - 1 }}</a></li>
+            {% endif %}
+            <li class="page-item active">
+                <a class="page-link" href="{{ url_for_other_page(page) }}">{{ page }}<span class="sr-only">(current)</span></a>
+            </li>
+            {% if page != total_pages %}
+            <li class="page-item"><a class="page-link" href="{{ url_for_other_page(page + 1) }}">{{ page + 1 }}</a></li>
+            {% endif %}
+            <li class="page-item {% if next_page == None %}disabled{% endif %}">
+                <a class="page-link" href="{{ url_for_other_page(page +1) }}">Next</a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}
