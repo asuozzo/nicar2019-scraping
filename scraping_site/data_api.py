@@ -9,7 +9,7 @@ def get_race_results(year, office):
     with open(RESULTS_PATH) as f:
         return [
             result for result in csv.DictReader(f)
-            if (result['year'] == year and
+            if (str(result['year']) == str(year) and
                 result['office'] == office)
         ]
 
