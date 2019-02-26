@@ -15,27 +15,39 @@ if __name__ == "__main__":
     soup = BeautifulSoup(sys.stdin, 'html.parser')
 
     # This time, though, we've got a page with multiple tables,
-    # so we can't just look for the table element. Instead,
-    # let's look specifically for the table header we want
-    # (Representative to Congress) and find the next table
-    # element on the page.
-    header = soup.find("h2", text="Representative To Congress")
-    table = header.find_next("table")
+    # so we can't just look for the table element.
 
-    # Now that we've got our table, it's all stuff we already know.
-    # First, grab the headers.
+    # First, grab the headers from the first table for column names.
     columns = []
-    header_cols = table.find('thead').find_all('th')
+    header_cols = soup.find("table").find('thead').find_all('th')
     for header_col in header_cols:
         columns.append(header_col.string)
+    
+    # since we're pulling multiple tables into one document, we'll 
+    # also want to include a final column for which table each 
+    # candidate came from.
+    columns.append("Office")
 
-    # Then write everything to a csv.
     writer = csv.writer(sys.stdout)
+    # Write those columns to a csv.
     writer.writerow(columns)
 
-    for tr in table.find_all('tr'):
-        row = []
-        for td in tr.find_all('td'):
-            row.append(td.string)
+    # Let's first find each header, and then save the text to 
+    # the "office" variable.
+    for header in soup.find_all("h2"):
+        office = header.text
 
-        writer.writerow(row)
+    # Then find the table after the header and loop through 
+    # its rows. We've done this step before!
+        table = header.find_next("table")
+        for tr in table.find_all('tr'):
+            row = []
+            for td in tr.find_all('td'):
+                row.append(td.string)
+            
+    # ignore blank rows
+            if len(row)>0:
+    
+    # add the name of the office to the end of the row.
+                row.append(office)
+                writer.writerow(row)
