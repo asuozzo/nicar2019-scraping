@@ -18,15 +18,13 @@ if __name__ == "__main__":
     # so we can't just look for the table element.
 
     # First, grab the headers from the first table for column names.
-    columns = []
+    # since we're pulling multiple tables into one document, we'll 
+    # also want to add a first column to note which office each 
+    # candidate was running for.
+    columns = ["Office"]
     header_cols = soup.find("table").find('thead').find_all('th')
     for header_col in header_cols:
         columns.append(header_col.string)
-    
-    # since we're pulling multiple tables into one document, we'll 
-    # also want to include a final column for which table each 
-    # candidate came from.
-    columns.append("Office")
 
     writer = csv.writer(sys.stdout)
     # Write those columns to a csv.
@@ -48,6 +46,6 @@ if __name__ == "__main__":
     # ignore blank rows
             if len(row)>0:
     
-    # add the name of the office to the end of the row.
-                row.append(office)
+    # add the name of the office to the beginning of the row.
+                row.insert(0, office)
                 writer.writerow(row)
