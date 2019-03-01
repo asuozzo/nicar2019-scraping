@@ -21,6 +21,10 @@ def form_with_url_params():
 
     if year is not None and office is not None:
         results = get_race_results(year, office)
+
+        if len(results) == 0:
+            return render_template('error.html', year=year, office=office), 404
+
         page = int(request.args.get('page', 1))
         paginated, next_page, total_pages = paginate(results, page)
 
