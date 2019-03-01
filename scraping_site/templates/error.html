@@ -5,9 +5,11 @@
 <div class="row">
     <div class="col-12 px-5 py-3">
         {% if candidate_name %}
-            <p>Whoops, we couldn't find {{candidate_name}}. Try looking for someone else!</p>
+        <p>Whoops, we couldn't find {{candidate_name}}. Try looking for someone else!</p>
+        {% elif year and office %}
+        <p>No results for {{ office }} in {{ year }}.</p>
         {% else %}
-            <p>Whoops, we couldn't find that page.</p>
+        <p>Whoops, we couldn't find that page.</p>
         {% endif %}
     </div>
 </div>

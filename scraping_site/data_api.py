@@ -21,14 +21,16 @@ def get_candidate_info(candidate_name):
             if result['candidate'] == candidate_name), None)
 
 
-def get_years_offices():
+def get_years_offices(year=None):
     years = set()
     offices = set()
 
     with open(RESULTS_PATH) as f:
         for result in csv.DictReader(f):
-            years.add(result['year'])
-            offices.add(result['office'])
+            if (year is None or
+                    (year is not None and result['year'] == str(year))):
+                years.add(result['year'])
+                offices.add(result['office'])
 
         return sorted(list(years)), sorted(list(offices))
 
