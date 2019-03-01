@@ -2,18 +2,13 @@
 {% block content %}
 <div class="row">
     <div class="col-12 px-5 py-3">
-        {% if year %}
-        <h1>Select an office</h1>
-        {% else %}
-        <h1>Select an election</h1>
-        {% endif %}
+        <h1>Select an election and office</h1>
     </div>
 </div>
 
 <div class="row">
     <div class="col-3 px-5 py-3">
-        <form method="post">
-            {% if year %}
+        <form>
             <div class="form-group">
                 <label for="office">Office</label>
                 <select class="form-control" name="office" id="office">
@@ -22,8 +17,7 @@
                     {% endfor %}
                 </select>
             </div>
-            <input id="year" name="year" type="hidden" value="{{ year }}" />
-            {% else %}
+
             <div class="form-group">
                 <label for="year">Year</label>
                 <select class="form-control" name="year" id="year">
@@ -32,8 +26,6 @@
                     {% endfor %}
                 </select>
             </div>
-            {% endif %}
-
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
