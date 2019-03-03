@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 
 if __name__ == '__main__':
-    soup = BeautifulSoup(sys.stdin, 'html.parser')
+    soup = BeautifulSoup(open('output/candidates_results.html'), 'html.parser')
 
     # find the office name and table on the page
     office = soup.find('h2').text

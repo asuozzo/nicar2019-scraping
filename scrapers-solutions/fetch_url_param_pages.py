@@ -3,7 +3,6 @@
 Get list of params from form and save out html files for all combinations
 """
 
-import sys
 import csv
 import requests
 
@@ -34,7 +33,7 @@ def fetch_url(url, payload):
 if __name__ == '__main__':
 
     url = "http://localhost:5000/4"
-    soup = BeautifulSoup(open("output/param_form.html", "r"), 'html.parser')
+    soup = BeautifulSoup(open('output/params-form.html'), 'html.parser')
 
     office_select = soup.find('select', {'id': 'office'})
     offices = [office.text for office in office_select.find_all('option')]
