@@ -3,3 +3,5 @@
 *.pyc
 __pycache__/
 instance/
+scrapers-solutions/output/*.html
+scrapers-solutions/output/*.csv
