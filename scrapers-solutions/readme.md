@@ -31,14 +31,15 @@ Local url: http://localhost:5000/2
 Local url: http://localhost:5000/3
 
 ### Fetch results page HTML and save to a local file
-
+`> python fetch_html.py http://localhost:5000/3 > data/src/profiles_main.html`
 ### Write results page data, with a column for links to candidate profiles, to a csv
-
-### Reopen results page file, follow each link and download profile HTML
-
+`> python parse_candidate_profiles_table.py http://localhost:5000 data/src/profiles_main.html > data/results.csv`
+### Reopen results csv, follow each link and download profile HTML
+`> python fetch_candidate_profiles.py data/results.csv data/src`
 ### Save the data from each candidate profile to a csv
-
+`> python parse_candidate_profiles.py data/src/profiles_candidate_*.html > data/profiles.csv`
 ### Join the results and profile csvs
+`> python join_results_candidate_profiles.py data/results.csv data/profiles.csv > data/results_with_profile.csv`
 
 # URL Parameters
 Local url: http://localhost:5000/4
