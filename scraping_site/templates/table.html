@@ -13,7 +13,7 @@
         <tr>
             <td>{{result.candidate|title}}</td>
             <td>{{result.party|title}}</td>
-            <td>{{result.votes}}</td>
+            <td>{{"{:,}".format(result.votes|int)}}</td>
         </tr>
         {% endfor %}
     </tbody>
