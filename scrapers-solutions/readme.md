@@ -48,7 +48,7 @@ Local url: http://localhost:5000/4
 `> python scrape_years_offices_get.py http://localhost:5000/4 > data/years_offices.csv`
 
 ### Fetch all possible combinations of office/years and iterate through pages. Download each HTML page
-`> python fetch_get_results.py http://localhost:5000/4 data/years_offices.csv > data/results.csv`
+`> python fetch_get_results.py http://localhost:5000/4 data/years_offices.csv data/src`
 
 ### Parse all files and write them to a csv
 `> python parse_single_table_multiple_files.py data/src/*.html > data/results.csv`
