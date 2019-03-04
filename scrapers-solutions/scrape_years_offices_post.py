@@ -6,7 +6,7 @@ Scrape years and offices from the multi-step results form.
 Outputs a CSV with one year/office pair per row.
 
 Example:
-    ./scrapers-solutions/scrape_years_offices.py http://127.0.0.1:5000/5
+    ./scrapers-solutions/scrape_years_offices_post.py http://127.0.0.1:5000/5
 
 """
 
