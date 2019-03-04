@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 if __name__=="__main__":
     
-    # print("Hello! This is a simple Python program that you'll edit for scraping practice.")
+    print("Hello! This is a simple Python program that you'll edit for scraping practice.")
 
     # FILL IN THE BLANK! Make a GET request to get the content of the
     # homepage. Its url is http://localhost:5000/
