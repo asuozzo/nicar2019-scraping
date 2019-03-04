@@ -4,7 +4,17 @@
 {% block content %}
 <div class="row">
     <div class="col-12 px-5 py-3">
-        <h1>Hey, welcome.</h1>
+        <h1 class="intro">Hey, welcome.</h1>
+
+        <section id="about">
+            <h2>About this class</h2>
+            This site was built for a session on scraping with Python at NICAR 2019. You can find the full repo with the site and scripts on <a href="https://github.com/asuozzo/nicar2019-scraping">Github</a>.
+        </section>
+
+        <section id="data">
+            <h2>About this data</h2>
+            On this site, you'll find election results data from the <a href="https://www.sec.state.vt.us/elections.aspx">Vermont Secretary of State</a> in 2016 and 2018.
+        </section>
     </div>
 </div>
 {% endblock %}
