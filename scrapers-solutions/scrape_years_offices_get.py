@@ -1,12 +1,20 @@
 #!/usr/bin/env python
 """
-Get list of params from form and save out html files for all combinations
+Scrape years and offices from the selection form
+
+Output a CSV with a row for each year/office combination
+
+Example:
+    python scrape_years_offices_get.py http://localhost:5000/4 > \
+    data/years_offices.csv
+
 """
 
 import csv
-import requests
+import sys
 
 from bs4 import BeautifulSoup
+import requests
 
 def fetch_url(url, payload):
     r = requests.get(url, params=payload)
@@ -32,8 +40,17 @@ def fetch_url(url, payload):
 
 if __name__ == '__main__':
 
-    url = "http://localhost:5000/4"
-    soup = BeautifulSoup(open('output/params-form.html'), 'html.parser')
+    url = sys.argv[1]
+
+    writer = csv.writer(sys.stdout)
+    columns = ['year','office']
+
+    writer.writerow(columns)
+
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content, 'html.parser')
+
+    options = soup.find_all('select')
 
     office_select = soup.find('select', {'id': 'office'})
     offices = [office.text for office in office_select.find_all('option')]
@@ -43,18 +60,4 @@ if __name__ == '__main__':
 
     for office in offices:
         for year in years:
-            page = 1
-            next_page = True
-            while next_page:
-                payload = {
-                    'year': year,
-                    'office': office,
-                    'page':page
-                }
-                results, next_page = fetch_url(url, payload)
-                if results:
-                    filename = "output/params_{0}_{1}_{2}.html".format(year,office,page)
-                    print(filename)
-                    with open(filename, "w") as f:
-                        f.write(results)
-                page += 1
+            writer.writerow([year, office])
