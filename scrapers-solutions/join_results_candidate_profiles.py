@@ -1,13 +1,22 @@
 #!/usr/bin/env python
 
-"""Join results file with candidate profiles file"""
+"""
+Join results file with candidate profiles file
+
+Example:
+
+    python join_results_candidate_profiles.py data/results.csv \
+    data/profiles.csv > data/results_with_profile.csv
+
+"""
 
 import csv
+import sys
 
 if __name__ == '__main__':
 
-    resultscsv = csv.reader(open("output/results.csv", "r"))
-    profilescsv = csv.reader(open("output/candidate_bios.csv", "r"))
+    resultscsv = csv.reader(open(sys.argv[1], "r"))
+    profilescsv = csv.reader(open(sys.argv[2], "r"))
 
     # skip header row on both files
     next(resultscsv, None)
@@ -17,7 +26,7 @@ if __name__ == '__main__':
     profiles = list(profilescsv)
 
     columns = ["Office", "Candidate", "Party", "Votes", "Funds Raised", "Bio"]
-    joinfile = csv.writer(open("output/results_w_bios.csv", "w"))
+    joinfile = csv.writer(sys.stdout)
     joinfile.writerow(columns)
 
     for result in resultscsv:

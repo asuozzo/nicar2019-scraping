@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 
-"""Parse an HTML table with links. Output CSV to standard output"""
+"""
+Parse an HTML table with links. Output CSV to standard output
+
+Example:
+    python parse_candidate_profiles_table.py http://localhost:5000 \
+    data/src/profiles_main.html > data/results.csv
+
+"""
 
 import csv
 import sys
@@ -9,7 +16,9 @@ from bs4 import BeautifulSoup
 
 
 if __name__ == '__main__':
-    soup = BeautifulSoup(open('output/results_candidates.html'), 'html.parser')
+
+    url = sys.argv[1]
+    soup = BeautifulSoup(open(sys.argv[2]), 'html.parser')
 
     # find the office name and table on the page
     office = soup.find('h2').text
@@ -21,7 +30,7 @@ if __name__ == '__main__':
         columns.append(header_col.string)
     columns.append("Link")
 
-    writer = csv.writer(open("output/results.csv", "w"))
+    writer = csv.writer(sys.stdout)
     writer.writerow(columns)
 
     for tr in table.find_all('tr'):
@@ -34,7 +43,7 @@ if __name__ == '__main__':
             if td.find('a'):
                 row.append(td.string)
                 link = td.find('a')['href']
-                link = 'http://localhost:5000{0}'.format(link)
+                link = '{0}{1}'.format(url,link)
             else:
                 row.append(td.string)
 
