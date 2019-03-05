@@ -31,7 +31,7 @@ def fetch_results_html(url, year, office, page):
     r = requests.get(url, params=payload)
 
     if r.status_code != 404:
-        soup = BeautifulSoup(r.content, 'html.parser')
+        soup = BeautifulSoup(r.text, 'html.parser')
 
         # handle jinja error
         if (soup.find("h1").text).find("jinja2") >-1:

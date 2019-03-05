@@ -19,7 +19,7 @@ import requests
 def fetch_url(url, payload):
     r = requests.get(url, params=payload)
     if r.status_code != 404:
-        soup = BeautifulSoup(r.content, 'html.parser')
+        soup = BeautifulSoup(r.text, 'html.parser')
 
         # handle jinja error
         if (soup.find("h1").text).find("jinja2") >-1:
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     writer.writerow(columns)
 
     r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
+    soup = BeautifulSoup(r.text, 'html.parser')
 
     options = soup.find_all('select')
 
