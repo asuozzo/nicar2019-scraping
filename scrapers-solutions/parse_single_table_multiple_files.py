@@ -4,8 +4,8 @@
 Parse a single HTML table and output CSV to standard output.
 
 The parsing logic is very similar to that in `parse_single_table.py` since the
-results in the version of the results site that requires an HTTP POST are
-displayed in a single page per race with only one results table.
+results in both versions of the results site that use forms are
+displayed in a single table per page.
 
 However, this version can parse multiple files, specified as positional
 arguments to scrape results from multiple HTML files.
