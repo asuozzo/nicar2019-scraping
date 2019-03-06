@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     # FILL IN THE BLANK: Find each header on this table, and create 
     # a for loop that iterates through them and grabs the name of 
-    # the office.
+    # the office. Save it to the variable "office".
 
     
     # FILL IN THE BLANK: Now you can find each table and parse it
@@ -49,8 +49,16 @@ if __name__ == "__main__":
     # (Hint: See what find_next() does)
 
 
-    # Next, add the office variable to the beginning of the row
-    # data you just collected and write that row to your file.
+
+    # Now, just iterate through those table rows like you did in 
+    # the last script. We're starting that list for each row with
+    # the office variable we set before. Write the whole thing to 
+    # a file.
+        for tr in table.find_all('tr'):
+            row = [office]
+            for td in tr.find_all('td'):
+                row.append(td.string)
+
             row.insert(0, office)
             writer.writerow(row)
 
