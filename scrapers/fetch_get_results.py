@@ -40,15 +40,7 @@ def submit_form(url, year, office, page):
     # FILL IN THE BLANK: Use `requests.get()` tommimic a form submission by
     # retrieving the form submission URL with the appropriate URL parameters.
 
-    # Requests is great because it lets you specify the URL parameters
-    # as a dictionary and it automatically encodes them.
-    params = {
-        'year': year,
-        'office': office,
-        'page': page,
-    }
-
-    return requests.get(url, params=params)
+    return None
 
 
 def verify_response(r):
@@ -61,9 +53,7 @@ def verify_response(r):
     """
     # FILL IN THE BLANK: Check that the form submission succeeded and if
     # it did, return `True`.
-    if r.status_code == 200:
-        return True
-
+ 
     if r is None:
         raise ValueError("Not a response object")
 
@@ -82,10 +72,8 @@ def has_next_page(soup):
     """
     # FILL IN THE BLANK: Use Beautiful Soup to inspect the HTML to determine if
     # there is another page of results.
-    page_list = soup.find("ul", {"class": "pagination"})
-    next_page_btn = page_list.find_all('li')[-1]
-
-    return "disabled" not in next_page_btn["class"]
+    
+    return False
 
 
 def fetch_results_html(url, year, office, page):
@@ -103,8 +91,6 @@ def fetch_results_html(url, year, office, page):
 
     """
     r = submit_form(url, year, office, page)
-    if r is None:
-        return None, False
 
     verify_response(r)
 
