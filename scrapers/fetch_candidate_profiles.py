@@ -44,10 +44,6 @@ def fetch_url(url):
     """
     # FILL IN THE BLANK: Return the HTML for the specified URL.
     # Be sure to check for failed requests.
-    r = requests.get(url)
-
-    if r.status_code == 200:
-        return r.text
 
     raise ValueError("Could not retrieve profile at URL '{0}'".format(url))
 
