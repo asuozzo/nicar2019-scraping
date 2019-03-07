@@ -25,10 +25,6 @@ def parse_profile_html(profile_path):
 
         # FILL IN THE BLANK: Use Beautiful Soup to scrape the bio text and the
         # amount of funds raised.
-        bio = soup.find('p', {'class': 'bio'})
-        funds_raised = bio.find_next('p').text
-        funds_raised = funds_raised[funds_raised.find('$') + 1:]
-        bio = bio.text
 
         return [funds_raised, bio]
 

@@ -63,23 +63,6 @@ def parse_results(table):
     # FILL IN THE BLANK: Read each row from the table and append it to
     # `results` as a list. Be sure to also get the `href` value of the link
     # to the profile and include as the last element of each result list.
-    for tr in table.find('tbody').find_all('tr'):
-        result = []
-        link = None
-
-        for td in tr.find_all('td'):
-            a = td.find('a')
-            # If there's a link in the cell, grab the URL and save it for
-            # later.
-            if a:
-                link = td.find('a')['href']
-
-            result.append(td.string)
-
-        if len(result):
-            result.append(link)
-
-        results.append(result)
 
     return results
 
