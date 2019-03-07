@@ -1,4 +1,4 @@
-## Some handy cheatsheets
+## Reference Sheet for Requests/Beautiful Soup Libraries
 _Note: The below examples use Python 3._
 ### Requests
 [Requests](http://docs.python-requests.org/en/master/) is the standard Python library for making HTTP requests. Need to fetch the HTML content from a webpage, or post to a form and get the response? Requests will handle that. Here's a handy reference for the package.
@@ -37,9 +37,9 @@ r = requests.get('https://www.dogsdogsdogs.com', params=payload)
 # retrieves: https://www.dogsdogsdogs.com?type=cute&age=puppy
 ```
 #### Make a POST request 
-Essentially, a POST request means you're sending some specific information to be processed by the server, rather than just sending a url and asking for a response.
+A POST request generally means you're sending some specific information to be processed by the server, rather than asking for the content of a url.
 
-You'll probably see POST requests most often in cases where you're submitting a form of some kind. The request might return the same url you're posting to, just like a GET request, but it also might return a dictionary of data, a redirect to a new page or something else entirely.
+You'll see POST requests most often in cases where you're submitting information of some kind, like a form. The request might return the same url you're posting to, just like a GET request, but it also might return a dictionary of data, a redirect to a new page or something else entirely.
 ```
 data = {
     'type':'cute',
