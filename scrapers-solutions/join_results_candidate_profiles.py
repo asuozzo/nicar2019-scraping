@@ -32,6 +32,6 @@ if __name__ == '__main__':
     for result in resultscsv:
         row = result[0:4]
         for profile in profiles:
-            if result[1] == profile[0]:
+            if (result[1] == profile[0]) and (len(row))<6:
                 row = row + profile[1:]
         joinfile.writerow(row)
