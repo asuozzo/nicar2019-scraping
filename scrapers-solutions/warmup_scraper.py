@@ -12,8 +12,8 @@ if __name__=="__main__":
     # print("Hello! This is a simple Python program that you'll edit for scraping practice.")
 
     # FILL IN THE BLANK! Make a GET request to get the content of the
-    # homepage. Its url is http://localhost:5000/
-    r = requests.get("http://localhost:5000/")
+    # homepage. Its url is http://127.0.0.1:5000/
+    r = requests.get("http://127.0.0.1:5000/")
 
 
     # FILL IN THE BLANK! The request will return a status code to tell 
