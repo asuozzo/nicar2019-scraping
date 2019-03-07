@@ -5,7 +5,7 @@ Scrape years and offices from the selection form
 Output a CSV with a row for each year/office combination
 
 Example:
-    python scrape_years_offices_get.py http://localhost:5000/4 > \
+    python scrape_years_offices_get.py http://127.0.0.1:5000/4 > \
     data/years_offices.csv
 
 """
