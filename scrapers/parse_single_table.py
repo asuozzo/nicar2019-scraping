@@ -25,6 +25,7 @@ if __name__ == "__main__":
     # page. Find it.
 
 
+
     columns = []
     # FILL IN THE BLANK: Next, we want to fill this list 
     # with column names from the table. Check it out in the 
@@ -36,8 +37,10 @@ if __name__ == "__main__":
     # redirect the output to a filename. 
     # That way, we can pass in lists (like our list of columns) 
     # with writer.writerow(LIST) to add new rows to the file.
-    writer = csv.writer(sys.stdout)
-    writer.writerow(columns)
+    
+    # UNCOMMENT THESE ROWS when you're ready to write the csv.
+    # writer = csv.writer(sys.stdout)
+    # writer.writerow(columns)
 
 
     # FILL IN THE BLANK: Write a "for" loop that goes through 

@@ -5,7 +5,6 @@ Fetch HTML from all candidate profile urls and write to local HTML
 Example:
     python fetch_candidate_profiles.py data/results.csv http://127.0.0.1:5000 \
     data/src
-
 """
 
 import csv
@@ -45,10 +44,6 @@ def fetch_url(url):
     """
     # FILL IN THE BLANK: Return the HTML for the specified URL.
     # Be sure to check for failed requests.
-    r = requests.get(url)
-
-    if r.status_code == 200:
-        return r.text
 
     raise ValueError("Could not retrieve profile at URL '{0}'".format(url))
 

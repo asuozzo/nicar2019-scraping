@@ -34,8 +34,9 @@ if __name__ == "__main__":
     for header_col in header_cols:
         columns.append(header_col.string)
 
-    writer = csv.writer(sys.stdout)
-    writer.writerow(columns)
+    # UNCOMMENT THESE ROWS when you're ready to write the csv.
+    # writer = csv.writer(sys.stdout)
+    # writer.writerow(columns)
 
     # FILL IN THE BLANK: Find each header on this table, and create 
     # a for loop that iterates through them and grabs the name of 
