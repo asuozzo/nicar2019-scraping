@@ -30,8 +30,6 @@ def get_election_years(soup):
     years = []
 
     # FILL IN THE BLANK: Scrape the years from the form.
-    year_select = soup.find('select', {'id': 'year'})
-    years = [year.text for year in year_select.find_all('option')]
 
     return years
 
@@ -49,8 +47,6 @@ def get_offices(soup):
     offices = []
 
     # FILL IN THE BLANK: Scrape the offices from the form.
-    office_select = soup.find('select', {'id': 'office'})
-    offices = [office.text for office in office_select.find_all('option')]
 
     return offices
 
