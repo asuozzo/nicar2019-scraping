@@ -19,6 +19,8 @@ import requests
 
 def scrape_years(url):
     """Returns list of years scraped from the form."""
+    years = []
+    
     # FILL IN THE BLANK: Load the first page, create a 
     # soup object and get the list of years from the 
     # option menu.
@@ -28,19 +30,12 @@ def scrape_years(url):
 
 def scrape_offices(url, year):
     """Returns list of offices scraped from the form."""
-    # FILL IN THE BLANK: What do we have to request in 
-    # order to get that second form page with a list of 
-    # offices? Figure that out and send your request:
+    offices = []
+    
+    # FILL IN THE BLANK: Request the second page of the 
+    # form and scrape the list of offices.
 
 
-
-
-    soup = BeautifulSoup(r.text, 'html.parser')
-
-    form = soup.select_one('form')
-    office_select = form.select_one('select#office')
-
-    offices = [opt.text for opt in office_select.select('option')]
 
     return offices
 
