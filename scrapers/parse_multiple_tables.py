@@ -22,17 +22,18 @@ if __name__ == "__main__":
     # and create a parser object
     soup = BeautifulSoup(sys.stdin, 'html.parser')
 
-    # If we're going to scrape all these tables into one file, 
-    # we'll need to keep track of which table each row came from. 
-    # Let's put in a first column called "Office".
-    columns = ["Office"]
-
     # This is the same thing we did in the single table file — 
     # they all have the same header row, so we only need to grab
     # the column names
+    columns = []
     header_cols = soup.find("table").find('thead').find_all('th')
     for header_col in header_cols:
         columns.append(header_col.string)
+
+    # If we're going to scrape all these tables into one file, 
+    # we'll need to keep track of which table each row came from. 
+    # Let's put in a first column called "Office".
+    columns.append("Office")
 
     # UNCOMMENT THESE ROWS when you're ready to write the csv.
     # writer = csv.writer(sys.stdout)
@@ -51,7 +52,7 @@ if __name__ == "__main__":
 
 
 
-    # FILL IN THE BLANK: Now, iterate through those table rows like you did in 
-    # the last script. We're starting that list for each row with
-    # the office variable we set before. Write the whole thing to 
+    # FILL IN THE BLANK: Now, iterate through those table rows
+    # like you did in the last script. Add the variable "office"
+    # to the end of your row, then write the whole thing to 
     # a file.
