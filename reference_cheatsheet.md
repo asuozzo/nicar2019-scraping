@@ -48,6 +48,15 @@ data = {
 r = requests.post('https://www.dogsdogsdogs.com', data=data)
 ```
 
+### Make a request with headers
+The most polite way to scrape is to specify a custom user agent to identify yourself. But some sites put in security that blocks requests with non-standard user agents, so you may want to use the user agent of a common browser instead. To find your browser's user agent, you can examine the headers in the dev tools network requests pane or Google "my user agent"
+```
+headers = {
+    'User-Agent': 'MyScraper 1.0'
+}
+requests.get('https://www.dogsdogsdogs.com', headers=headers)
+```
+
 ### Beautiful Soup
 Fetched your HTML with Requests? Great. [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) is a library that will help you navigate through that HTML file to get to the parts you're looking for. Here are some ways you can use it.
 
