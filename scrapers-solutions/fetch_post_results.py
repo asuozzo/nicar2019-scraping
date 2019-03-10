@@ -4,8 +4,8 @@
 Fetches HTML results that requires an HTTP POST of form to view results.
 
 Example:
-    python fetch_post_results.py http://127.0.0.1:5000/5 years_offices.csv \
-    data/src/
+    ./scrapers-solutions/fetch_post_results.py http://127.0.0.1:5000/5 \
+    ./scrapers-solutions/data/years_offices.csv ./scrapers-solutions/data/src/
 
 """
 

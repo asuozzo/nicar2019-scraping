@@ -5,8 +5,8 @@ Parse a page with multiple HTML tables and output CSV to standard output
 
 Example:
 
-    python fetch_html.py http://127.0.0.1:5000/2 | \
-    python parse_multiple_tables.py > data/results.csv
+    python ./scrapers/fetch_html.py http://127.0.0.1:5000/2 | \
+    python ./scrapers/parse_multiple_tables.py > data/results.csv
 
 """
 

@@ -4,7 +4,8 @@
 Open each candidate profile file and write info to csv
 
 Example:
-    python parse_candidate_profiles.py data/results.csv data/src/
+    ./scrapers-solutions/parse_candidate_profiles.py \
+    ./scrapers-solutions/data/results.csv ./scrapers-solutions/data/src/
 
 """
 

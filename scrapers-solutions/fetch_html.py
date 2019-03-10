@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 """
 Fetch HTML from a URL and output to standard output.
+
+Example:
+    ./scrapers-solutions/fetch_html.py http://127.0.0.1:5000/1 \
+    > data/src/results.html
+
 """
 
 import sys

@@ -3,9 +3,8 @@
 Fetch HTML from all candidate profile urls and write to local HTML
 
 Example:
-    python fetch_candidate_profiles.py data/results.csv http://127.0.0.1:5000 \
-    data/src
-
+    ./scrapers-solutions/fetch_candidate_profiles.py data/results.csv\
+    http://127.0.0.1:5000 data/src
 """
 
 import csv

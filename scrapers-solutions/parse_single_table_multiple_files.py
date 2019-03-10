@@ -14,8 +14,8 @@ the filenames as positional arguments, the year of the result is not contained
 in the HTML of the results.
 
 Example:
-    ./scrapers-solutions/parse_single_table_multiple_files.py
-    data/years_offices.csv data/src
+    ./scrapers-solutions/parse_single_table_multiple_files.py \
+    ./scrapers-solutions/data/years_offices.csv ./scrapers-solutions/data/src
 
 """
 

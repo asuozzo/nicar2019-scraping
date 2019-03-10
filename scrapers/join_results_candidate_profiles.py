@@ -5,7 +5,7 @@ Join results file with candidate profiles file
 
 Example:
 
-    python join_results_candidate_profiles.py data/results.csv \
+    python ./scrapers/join_results_candidate_profiles.py data/results.csv \
     data/profiles.csv > data/results_with_profile.csv
 
 """

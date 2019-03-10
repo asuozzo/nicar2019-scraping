@@ -4,8 +4,8 @@
 Fetches HTML results for all form combinations.
 
 Example:
-    python fetch_get_results.py http://127.0.0.1:5000/4 data/years_offices.csv \
-    data/src
+    ./scrapers-solutions/fetch_get_results.py http://127.0.0.1:5000/4 \
+    data/years_offices.csv data/src
 """
 
 import csv

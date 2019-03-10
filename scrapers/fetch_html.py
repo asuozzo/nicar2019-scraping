@@ -4,7 +4,7 @@
 Fetch HTML from a URL and output to standard output.
 
 Example:
-    python fetch_html.py http://127.0.0.1:5000/1
+    python ./scrapers/fetch_html.py http://127.0.0.1:5000/1
 
 """
 

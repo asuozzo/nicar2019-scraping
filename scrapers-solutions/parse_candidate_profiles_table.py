@@ -4,7 +4,7 @@
 Parse an HTML table with links. Output CSV to standard output
 
 Example:
-    python parse_candidate_profiles_table.py data/src/profiles_main.html \
+    ./scrapers-solutions/parse_candidate_profiles_table.py data/src/profiles_main.html \
     > data/results.csv
 
 """
