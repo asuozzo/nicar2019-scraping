@@ -3,7 +3,7 @@
 ## Useful links for NICAR participants
 
 - [Slides](https://docs.google.com/document/d/1-APtsKXlB4cjHz2jPUYNZ-7FnXEWbV61Hd47q1JA-9Q/edit?usp=sharing)
-- [Technical Cheat Sheet](blob/master/reference_cheatsheet.md)
+- [Technical Cheat Sheet](reference_cheatsheet.md)
 
 ## What is this?
 
