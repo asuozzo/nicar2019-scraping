@@ -1,5 +1,103 @@
 ## Reference Sheet for Requests/Beautiful Soup Libraries
 _Note: The below examples use Python 3._
+
+### Using the command line
+On a Mac, use the command line by opening the Terminal app. 
+- Change directories: `cd directory-name`
+- See all files in the directory you're in: `ls`
+- Run a python script: `python script-name.py`
+- Pass positional arguments to a python script: `python script-name.py http://127.0.0.1/`
+- Send the output of a script to a file: `python script-name.py > filename.csv`
+- Send the output of a script to another script: `python script-name.py | python script-name2.py`
+### Parts of a standard Python script
+The shebang line, at the very top of the file, tells the system that this is a script, and tells it which interpreter to use. In this case, it's just telling the system to use the default Python executable.
+```
+#!/usr/bin/env python
+```
+You may see a docstring just below the shebang line, or within a function. It's a space for the developer to provide documentation on what the script or function does.
+```
+"""
+    This is a docstring. It usually documents how a script file or function within a file works.
+"""
+```
+The `__name__=="__main__:"` statement is where all code in a script that's not within a function should go. When you run the script in the command line, the script within this block will execute. If you import your script into another script — say, you want to use function1 in something else you're writing — the `__name__=="__main__:"` block will not run. We're running all the scripts in this class in the command line, so that block will always run.
+```
+def function1(variable1):
+    return variable1
+
+if __name__ == "__main__":
+    function1(variable1)
+```
+
+### Useful Python snippets
+
+#### Handling command line arguments
+You can access command line arguments using the sys library. They get passed in to your script as a list. Say you pass in a url and a directory: `python script-name.py http://127.0.0.1/ data/src`. Access the arguments like this:
+```
+import sys
+
+variable1 = sys.argv[0] # http://127.0.0.1/
+variable2 = sys.argv[1] # data/src
+```
+Note that the order is very important here. You can also set up your script to take in named arguments from the command line. That's not something we're covering in this class, but it can come in handy when you're writing more complicated scripts.
+#### Using standard input and output
+Standard input and output function as file-like objects.
+
+You can handle a file passed in via standard input like a file that's already been opened; iterate through its lines or pass it to a BeautifulSoup object.
+```
+soup = BeautifulSoup(sys.stdin,'html.parser')
+```
+You can also write to standard output as you would to a file. That lets you redirect the output to a filename you specify, using the `>` syntax, when you run the script on the command line.
+
+Be aware that if you are using standard output, any print statements you use in the debugging process will be added to your output. If you're seeing things in your file that shouldn't be there, check for print statements.
+```
+sys.stdout.write("Hi")
+```
+#### Reading and writing CSV files
+Make sure to `import csv` at the top of your file.
+
+Read a CSV
+```
+with open("data.csv", "r") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row) # returns a list, i.e. ["Bernie Sanders","Senator",45000]
+```
+Write a CSV
+```
+with open('data.csv', 'w') as f:
+    writer = csv.writer(f)
+    writer.writerow(["Candidate", "Office", "Votes"])
+    writer.writerow(["Bernie Sanders","Senator",45000])
+```
+Read a CSV as a dictionary
+```
+with open("data.csv", "r") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        print(row) # returns a dictionary, i.e. {"Candidate":"Bernie Sanders",
+                                                 "Office":"Senator",
+                                                 "Votes":45000}
+        print(row["Candidate"]) # "Bernie Sanders"
+```
+Write a CSV as a dictionary
+```
+with open('data.csv', 'w') as f:
+    fieldname = ["Candidate","Office","Votes"]
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader(["Candidate", "Office", "Votes"])
+    writer.writerow({"Candidate":"Bernie Sanders","Office":"Senator","Votes":45000})
+```
+#### Delay a function (useful for not accidentally taking down websites!)
+Every time this function runs, it will pause for two seconds before returning a value.
+```
+from time import sleep
+
+def function1(variable1):
+    sleep(2)
+    return variable1
+```
+
 ### Requests
 [Requests](http://docs.python-requests.org/en/master/) is the standard Python library for making HTTP requests. Need to fetch the HTML content from a webpage, or post to a form and get the response? Requests will handle that. Here's a handy reference for the package.
 
