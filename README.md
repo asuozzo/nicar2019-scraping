@@ -4,6 +4,7 @@
 
 - [Slides](https://docs.google.com/document/d/1-APtsKXlB4cjHz2jPUYNZ-7FnXEWbV61Hd47q1JA-9Q/edit?usp=sharing)
 - [Technical Cheat Sheet](reference_cheatsheet.md)
+- [Tipsheet](tipsheet.md)
 
 ## What is this?
 
