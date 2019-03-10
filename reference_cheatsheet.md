@@ -1,4 +1,4 @@
-## Reference Sheet for Requests/Beautiful Soup Libraries
+## Technical Cheatsheet
 _Note: The below examples use Python 3._
 
 ### Using the command line
