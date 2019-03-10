@@ -97,7 +97,6 @@ def function1(variable1):
     sleep(2)
     return variable1
 ```
-
 ### Requests
 [Requests](http://docs.python-requests.org/en/master/) is the standard Python library for making HTTP requests. Need to fetch the HTML content from a webpage, or post to a form and get the response? Requests will handle that. Here's a handy reference for the package.
 
@@ -210,3 +209,9 @@ soup.find('p).get('class') # None
 sloth = soup.find('p', {'class','sloth'})
 soup.find_next('p') # <p>I am a platypus</p>
 ```
+
+### Other useful Python concepts
+Some of the scripts in these scraper files use these concepts, but not the parts you'll be writing. If you'd like to learn more about how they work
+
+- [Error handling](https://docs.python.org/3/tutorial/errors.html) — This most often takes the form of a try/except statement. With error handling, your script won't just stop if it encounters an exception — you'll be able to tell it exactly what to do when there's an error, and you can use it to handle different types of errors in different ways, print information about the error to the command line and more.
+- [Regex](https://developers.google.com/edu/python/regular-expressions) — They may look like a garbled mess, but regular expressions are an extremely powerful way to match text patterns. If you need to find somewhat complex text patterns like email addresses or do complicated substitutions, regex can help you out.
