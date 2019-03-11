@@ -23,14 +23,40 @@ This project contains the activities and supporting code for a [hands-on worksho
 ## Assumptions
 
 - Python 3.6+
-- Pipenv
+- [Pipenv](https://pipenv.readthedocs.io/) or [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/)
 
 ## Installation
+
+### Clone this repository
+
+```
+git clone https://github.com/asuozzo/nicar2019-scraping.git
+```
+
+### Change directory to the project directory
+
+```
+cd nicar2019-scraping
+```
+
+#### Install Python dependencies
+
+#### Pipenv
 
 Create a virtualenv for the project and install Python dependencies using Pipenv:
 
 ```
 pipenv install
+```
+
+#### Virtualenvwrapper
+
+Create a virtualenv for the project and install Python dependencies using Virtualenvwrapper:
+
+```
+mkvirtualenv nicar2019-scraping
+workon nicar2019-scraping
+pip install -r requirements.txt 
 ```
 
 ## Running the mock scraping site
