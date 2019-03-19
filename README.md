@@ -24,6 +24,11 @@ This project contains the activities and supporting code for a [hands-on worksho
 
 - Python 3.6+. If you don't have Python, you may want to follow the instructions at [Installing Python the IRE Way](https://docs.google.com/document/d/1cYmpfZEZ8r-09Q6Go917cKVcQk_d0P61gm0q8DAdIdg/edit)
 - [Pipenv](https://pipenv.readthedocs.io/) or [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/)
+- A basic knowledge of Python programming. These are good resources:
+  - [Intermediate Python — Python Tips](http://book.pythontips.com/en/latest/)
+  - [How to Think like a Computer Scientist: Interactive Edition](https://interactivepython.org/courselib/static/thinkcspy/index.html)
+  - [Dive Into Python 3](https://www.diveinto.org/python3/)
+  - [Django Girls Tutorial](https://tutorial.djangogirls.org/en/) - This is Django-specific, but there is a good intro to the command line and Python section.
 
 ## Installation
 
